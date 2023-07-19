@@ -1,8 +1,7 @@
 from django.db import models
 
 # Create your models here.
-# tickit/models.py
-from django.db import models
+
 
 
 class Venue(models.Model):
@@ -15,12 +14,12 @@ class Venue(models.Model):
 
 
 class Event(models.Model):
+    venue = models.ForeignKey(Venue, on_delete=models.CASCADE, related_name='events')
     title = models.CharField(max_length=100)
     artist = models.CharField(max_length=250, null=True, blank=True)
     date = models.DateField()
     genre = models.CharField(max_length=200)
     price = models.DecimalField(max_digits=10, decimal_places=2)
-    venue = models.ForeignKey(Venue, on_delete=models.CASCADE, related_name='events')
     is_concert = models.BooleanField(default=True)
     is_sports_event = models.BooleanField(default=False)
 
