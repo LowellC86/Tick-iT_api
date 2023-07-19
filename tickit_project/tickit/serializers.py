@@ -4,7 +4,6 @@ from .models import Venue, Event
 class EventSerializer(serializers.HyperlinkedModelSerializer):
     venue = serializers.HyperlinkedRelatedField(
         view_name='venue_detail',
-        # many=True,
         read_only=True
     )
 
@@ -19,8 +18,8 @@ class EventSerializer(serializers.HyperlinkedModelSerializer):
         
 class VenueSerializer(serializers.HyperlinkedModelSerializer):
     events = EventSerializer(
-        many = True,
-        read_only =True
+        many=True,
+        read_only=True
     )
 
     venue_url = serializers.ModelSerializer.serializer_url_field(
@@ -29,4 +28,4 @@ class VenueSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Venue
-        fields = ('id', 'name_url','photo_url')
+        fields = ('id', 'photo_url', 'events', 'venue_url') 
