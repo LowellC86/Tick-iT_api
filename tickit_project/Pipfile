@@ -6,9 +6,11 @@ verify_ssl = true
 [dev-packages]
 
 [packages]
-django = "*"
 psycopg2-binary = "*"
 djangorestframework = "*"
+gunicorn = "*"
+whitenoise = "*"
+django = "===4.0"
 
 [requires]
 python_version = "3.7"
