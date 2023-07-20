@@ -74,7 +74,11 @@ CORS_ALLOWED_ORIGINS = [
 CORS_ALLOW_ALL_ORIGINS = True
 
 CSRF_TRUSTED_ORIGINS = [
-    "http://localhost:3000"
+    "http://localhost:3000",
+    "http://2603:9001:cc00:12:1c57:e365:3483:ca24",
+    "http://50.89.7.22",
+    "https://tick-itapi-production.up.railway.app"
+    
 ]
 
 ROOT_URLCONF = 'tickit_django.urls'
