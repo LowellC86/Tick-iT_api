@@ -13,7 +13,6 @@ class Venue(models.Model):
     def __str__(self):
         return self.name
 
-
 class Event(models.Model):
     venue = models.ForeignKey(Venue, on_delete=models.CASCADE, related_name='events')
     title = models.CharField(max_length=100)
